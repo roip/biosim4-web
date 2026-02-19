@@ -1,21 +1,21 @@
-# Biosim4 — Biological Evolution Simulator
+# biosim4-web
 
-A TypeScript port of David Miller's [biosim4](https://github.com/davidrmiller/biosim4) — a biological evolution simulator where creatures with neural networks evolve through natural selection in a 2D grid world.
+A browser-based biological evolution simulator, ported to TypeScript/Next.js from David Miller's [biosim4](https://github.com/davidrmiller/biosim4) (C++).
 
-Based on the video ["I programmed some creatures. They evolved."](https://www.youtube.com/watch?v=N3tRFayqVtk)
+Inspired by the video ["I programmed some creatures. They evolved."](https://www.youtube.com/watch?v=N3tRFayqVtk)
 
 ## What It Does
 
-A population of creatures lives in a 2D grid. Each creature has a **genome** encoding a simple neural network that connects **21 sensory inputs** (location, population density, pheromones, barriers) to **17 action outputs** (movement, signaling, killing).
+A population of creatures lives on a 2D grid. Each creature has a **genome** encoding a simple neural network that connects **21 sensory inputs** (location, population density, pheromones, barriers) to **17 action outputs** (movement, signaling, killing).
 
-At the end of each generation, creatures satisfying the **survival criteria** reproduce — passing their genes with mutations to the next generation. Over time, the population evolves emergent behaviors adapted to the selection pressure.
+At the end of each generation, creatures satisfying the **survival criteria** reproduce, passing their genes (with mutations) to the next generation. Over time, the population evolves emergent behaviors adapted to the selection pressure.
 
 ## Features
 
 - **Real-time visualization** — Canvas 2D rendering of the grid, creatures, barriers, and pheromone signals
-- **Interactive controls** — Start/Pause/Resume/Reset, single-step, step-generation
+- **Interactive controls** — Start / Pause / Resume / Reset, single-step, step-generation
 - **Configurable parameters** — Population size, grid dimensions, genome length, mutation rates, neurons
-- **11 survival criteria** — Circle, wall contact, center/corner weighted, pairs, and more
+- **9 survival criteria** — Circle, wall contact, center/corner weighted, pairs, and more
 - **7 barrier types** — Vertical/horizontal bars, blocks, floating islands, spots
 - **Genome inspector** — Click any creature to see its neural network (sensors → neurons → actions)
 - **Statistics panel** — Survival rate, genetic diversity, generation history charts
@@ -25,11 +25,11 @@ At the end of each generation, creatures satisfying the **survival criteria** re
 ## Getting Started
 
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Open [http://localhost:4000](http://localhost:4000) in your browser (or whichever port Next.js assigns).
 
 ## How It Works
 
@@ -45,6 +45,14 @@ For each generation:
   End of generation:
     Evaluate survival → compute stats → spawn next generation with mutations
 ```
+
+## Tech Stack
+
+- **Next.js 15** with Turbopack
+- **React 19**
+- **Tailwind CSS 4**
+- **TypeScript 5**
+- **pnpm** for package management
 
 ## Project Structure
 

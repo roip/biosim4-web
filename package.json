@@ -1,5 +1,5 @@
 {
-  "name": "biosim4",
+  "name": "biosim4-web",
   "version": "1.0.0",
   "description": "TypeScript port of biosim4 — a biological evolution simulator with neural networks and natural selection",
   "private": false,
